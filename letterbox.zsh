@@ -23,7 +23,7 @@ letterbox_func () {
 
 find $DIR \
     -type f \
-    -name "*.jpeg" |
+    \( -name "*.jpeg" -or -name "*.JPG" \) |
     env_parallel --jobs 7 letterbox_func
 
 unset -f letterbox_func
